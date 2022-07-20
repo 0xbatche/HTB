@@ -10,4 +10,4 @@ _embedded device's asynchronous serial debugging interface_. Donc on fait une an
 qu'on peut trouver ici : https://en.wikipedia.org/wiki/Serial_port
 Le fabricant du logiciel en question vend de nombreuses interfaces différentes.
 Après avoir tenté différent bitrates, on tombe sur un qui produit dans le mode "console" quelque chose de lisible : le flag.
-![img]()
+<img src="https://github.com/0xbatche/HTB/blob/0efcad7e3fffdbe7096dd82dc8ddb158049d17dc/challenges/hardware/chall1_hardware.png" alt="Chall1 width="250"/>
