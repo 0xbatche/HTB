@@ -29,12 +29,13 @@ Il s'agit d'un programme simple qui demande un mot de passe.
 
 ![ep1](https://github.com/0xbatche/HTB/blob/057f7cd112c95228328754edcd4ce672bc8e4393/challenges/Reversing/imgs/chall_find_the_easy_pass_1.PNG)
 
-Je ne connais pas encore beaucoup l'ingéniérie inversée, mais après m'être cassé les dents sur de nombreux challenges en CTF qui demande ce type de connaissance, j'ai pu voir qu'il y a deux choses essentielles pour ce type de challenge : un désassembleur et un débugueur.
+Je ne connais pas encore vraiment l'ingéniérie inversée, mais après m'être cassé les dents sur de nombreux challenges en CTF qui demandent ce type de connaissances, j'ai pu voir qu'il y a deux choses essentielles pour ce type de challenge : un désassembleur et un débugueur.
 
-Pour désassembler, il y a énormément de solution (avec GDB et le module python, Ida Pro, Ghidra etc). Pour ma part, je préfère Ghidra pour plusieurs raisons :
+Pour désassembler, il y a énormément de solutions (avec GDB et le module python, Ida Pro, Ghidra etc). Pour ma part, je préfère Ghidra pour plusieurs raisons :
 
-- C'est gratuit
-- Mes connaissances en langages assembleur étant maigres, le pseudo-code généré par le logiciel est très pratique pour essayer de s'y retrouver.
+- C'est gratuit (contrairement à IDA)
+- C'est "joli" (hem)
+- Mes connaissances en langage assembleur étant maigres, le pseudo-code généré par le logiciel est très pratique pour essayer de s'y retrouver.
 
 Pour débuguer, c'est idem, on peut trouver de nombreuses solutions. Pour ma part je vais utiliser ollydbg, mais un autre ferait tout aussi bien l'affaire.
 
