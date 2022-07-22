@@ -17,4 +17,4 @@
 - [Weak RSA](https://github.com/0xbatche/HTB/blob/2001c8e4e023a36050175365b45b2d3fe7c7a7f2/challenges/Crypto/Weak_RSA.md) (crypto)
 
 
-(1) Je n'écris pas de write-up pour toutes les boxes ou tous les challenges, car ça demande énormément de temps que je n'ai pas forcément avec les études (et les boxes et les challenges ;) )
+(1) Je n'écris pas de write-up pour toutes les boxes ou tous les challenges que j'ai faits, car ça demande énormément de temps que je n'ai pas forcément avec les études (et les boxes et les challenges ;) )
