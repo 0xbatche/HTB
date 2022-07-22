@@ -1,14 +1,14 @@
 # Weak RSA
 
-Un challenge qui aura été assez malgré la simplicité de la résolution.
+Un challenge qui aura été assez long à faire malgré la simplicité de la résolution.
 
-En effet, je ne connaissais pour ainsi dire pas grand chose de la cryptographie, et c'était donc l'occasion de plonger les mains dans le cambouie.
+En effet, je ne connaissais pour ainsi dire pas grand chose de la cryptographie, et c'était donc l'occasion de plonger les mains dans le cambouis.
 
 Si on souhaite réaliser rapidement le challenge, il suffit de taper "RSACtftool" sur google et d'exécuter le script python.
 
 Pour ma part, j'ai souhaité voir comment on pouvait faire en écrivant à la main un script pour résoudre ce challenge.
 
-Ce fut beaucoup plus long que prévu.
+Ce fut beaucoup plus long que prévu. Ici un condensé de ce à quoi je suis arrivé.
 
 On a donc un fichier flag.enc 
 
@@ -44,7 +44,7 @@ Alors la première chose qu'on souhaite trouver, ce sont p et q. Car une fois qu
 k = e ^ -1 (mod phi)
 ```
 
-Ou e sera l'exposant, et phi le totient d'euler tel que t :
+Ou e sera l'exposant, et phi la fonction indicatrice d'Euler tel que phi :
 
 ```
 phi = (p - 1) * (q - 1)
@@ -52,7 +52,7 @@ phi = (p - 1) * (q - 1)
 
 Pour trouver p et q, j'ai tuilisé une méthode connue sous le nom de "google it" : à savoir en allant sur [factordb](http://factordb.com/index.php).
 
-En effet, il y a déjà plein de nombre dont on connaît p et q.
+En effet, il y a déjà plein de nombres dont on connaît p et q (sinon on peut essayer de les calculer, mais c'est trèèèès long, sauf avec l'attaque de Wiener peut-être, en partant du fait que p et q sont proches et e faible).
 
 ```python
 #!/usr/bin/python
