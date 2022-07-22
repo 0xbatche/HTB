@@ -2,6 +2,7 @@
 ## Boxes :
 
 - [Lame](https://github.com/0xbatche/HTB/blob/a2ddccb8872b9396727e6c00f98181be71f25418/boxes/Lame.md)
+- [Jerry](https://github.com/0xbatche/HTB/blob/21c6a446828bec460d15610d80a4dd9d8529b61e/boxes/Jerry.md)
 - Opensource (soon)
 - Redpanda (soon)
 - Trick (soon)
